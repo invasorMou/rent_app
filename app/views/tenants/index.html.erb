@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rent app</title>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>Tenant</th>
+			<th>Email</th>
+			<th>Apartment</th>
+			<th>Owner</th>
+		</tr>
+		<% @tenants.each do |tenant|%>
+			<tr>
+				<td><%= tenant.name%></td>
+				<td><%= tenant.email%></td>
+				<td><%= tenant.apartment.number%></td>
+				<td><%= tenant.apartment.owner%></td>
+				
+			</tr>
+		<% end%>
+	</table>	
+
+
+
+
+</body>
+</h

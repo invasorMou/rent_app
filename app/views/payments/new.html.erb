@@ -1,0 +1,14 @@
+<h1>NEW PAYMENTS</h1>
+
+<%= form_for @pay, url: {action: "create"}, html: {class: "form"} do |form| %>
+	<h4>Date:</h4>
+	<%= form.text_field :date %>
+	<h4>Amount:</h4>
+	<%= form.text_field :amount %>
+	<h4>Description:</h4>
+	<%= form.text_field :description %>
+	<h4>Tenant:</h4>
+<!-- 	<%= form.text_field :tenant_id %> -->
+	<%= form.select(:tenant_id, options_for_select([['hola','hola'][1,1][2,2]]))%>
+	<%= form.submit "Create"%>
+<% end %>

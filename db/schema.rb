@@ -10,21 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180326193601) do
+ActiveRecord::Schema.define(version: 20180327191441) do
 
   create_table "apartments", force: :cascade do |t|
-    t.date "date"
-    t.integer "amount"
-    t.string "description"
-    t.integer "tenant_id"
+    t.integer "number"
+    t.string "owner"
+    t.float "rent"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "payments", force: :cascade do |t|
-    t.integer "number"
-    t.string "owner"
-    t.float "rent"
+    t.date "date"
+    t.float "amount"
+    t.string "description"
+    t.integer "tenant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "tenants", force: :cascade do |t|
