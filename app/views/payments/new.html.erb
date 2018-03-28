@@ -1,14 +1,17 @@
 <h1>NEW PAYMENTS</h1>
 
-<%= form_for @pay, url: {action: "create"}, html: {class: "form"} do |form| %>
+<%= form_for @pay, url: {action: "create"}, html: {class: "form-inline"} do |form| %>
 	<h4>Date:</h4>
-	<%= form.text_field :date %>
+	<%= form.text_field :date, html: {class: "form-control"} %>
 	<h4>Amount:</h4>
-	<%= form.text_field :amount %>
+	<%= form.text_field :amount, html: {class: "form-control"} %>
 	<h4>Description:</h4>
-	<%= form.text_field :description %>
+	<%= form.text_field :description, html: {class: "form-control"} %>
 	<h4>Tenant:</h4>
-<!-- 	<%= form.text_field :tenant_id %> -->
-	<%= form.select(:tenant_id, options_for_select([['hola','hola'][1,1][2,2]]))%>
-	<%= form.submit "Create"%>
+	<%= form.select(:tenant_id, options_for_select([['Prueba apto 102', 1],['Diego apto 101', 2],['Matt apto 103', 3],['Angel apto 104', 4],['Flo apto 201', 5],['Nicolle apto 202', 6],['Granger apto 301', 7],['Mou apto 302', 8],['Ricardo apto 303', 9],['Alberto apto 304', 10],['Liliana apto 305', 11],['Luisa apto 401', 12],['Ele apto 501', 13],['Santi apto 502', 14],['Sergio apto 503', 15]]), prompt: true) %>
+	<%= form.submit "Create",:onclick => 'return confirm("hola")' %>
 <% end %>
+
+ 
+
+

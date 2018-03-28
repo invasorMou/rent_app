@@ -4,11 +4,11 @@ class PaymentsController < ApplicationController
 	end
 	def create
 		Payment.create!(pay_params)
-		redirect_to 'new_payments'		
+		redirect_to '/payments/new' 		
 	end
 	
  	private
  	def pay_params
- 		params.require(:payment).permit(:date, :amout, :description, :tenant_id)
+ 		params.require(:payment).permit(:date, :amount, :description, :tenant_id)
  	end
 end
