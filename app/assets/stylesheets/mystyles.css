@@ -1,13 +1,4 @@
-.menu h3	{
-	display: inline-block;
+.navbar li a {
+	color: white;
 }
 
-.menu {
-	width: 50%;
-	margin:	auto;
-
-}
-
-.welcome {
-	text-align: center;
-}

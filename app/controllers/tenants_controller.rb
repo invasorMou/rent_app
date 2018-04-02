@@ -1,5 +1,6 @@
 class TenantsController < ApplicationController
-	def index
-		@tenants = Tenant.all
+	def show
+		
 	end
+ 	
 end

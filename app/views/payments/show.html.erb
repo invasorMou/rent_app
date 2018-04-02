@@ -1,0 +1,22 @@
+<table>
+	<tr>
+		<th>Date</th>
+		<th>Amount</th>
+		<th>Description</th>
+		<th>Tenant</th>
+		<th>Apartment</th>
+	</tr>
+
+<% @payments.each do |payment|%>
+	<tr>
+		<td><%= payment.date%></td>
+		<td><%= payment.amount%></td>
+		<td><%= payment.description%></td>
+		<td><%= payment.tenant.name%></td>
+		<td><%= payment.tenant.apartment.number%></td>
+	</tr>
+	
+	<% end%>
+</table>
+
+
