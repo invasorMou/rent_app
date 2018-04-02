@@ -1,19 +1,20 @@
-<table>
-	<tr>
-		<th>Date</th>
-		<th>Amount</th>
-		<th>Description</th>
-		<th>Tenant</th>
-		<th>Apartment</th>
-	</tr>
-
+<table class="mx-auto table">
+	<thead class="thead-dark text-center">
+		<tr>
+			<th>Date</th>
+			<th>Amount</th>
+			<th>Description</th>
+			<th>Tenant</th>
+			<th>Apartment</th>
+		</tr>
+	</thead>
 <% @payments.each do |payment|%>
 	<tr>
-		<td><%= payment.date%></td>
-		<td><%= payment.amount%></td>
+		<td class="text-center"><%= payment.date%></td>
+		<td class="text-center"><%= payment.amount%></td>
 		<td><%= payment.description%></td>
-		<td><%= payment.tenant.name%></td>
-		<td><%= payment.tenant.apartment.number%></td>
+		<td class="text-center"><%= payment.tenant.name%></td>
+		<td class="text-center"><%= payment.tenant.apartment.number%></td>
 	</tr>
 	
 	<% end%>

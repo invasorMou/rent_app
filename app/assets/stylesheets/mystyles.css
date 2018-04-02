@@ -1,4 +1,32 @@
 .navbar li a {
-	color: white;
+	color: black	;
+}
+body {
+	height: 100vh;
 }
 
+.welcome{
+	padding-top: 180px;
+}
+
+.sub-title {
+	text-align: center;
+	padding: 20px 0 10px 0;
+	margin-bottom: 0px;
+}
+
+.tenant-selection {
+	text-align: center;
+}
+
+.result {
+	padding-top: 20px;
+}
+
+.max-height {
+	max-height: 100%;
+}
+
+.nav-link {
+	font-size: 20px;
+}

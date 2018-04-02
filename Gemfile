@@ -42,6 +42,8 @@ group :development, :test do
   gem "database_cleaner"
   gem "rspec-rails"
   gem "pry-rails"
+  gem 'octicons'
+  gem 'octicons_helper'
 end
 
 group :development do

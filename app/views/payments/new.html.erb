@@ -1,18 +1,28 @@
-<h1>NEW PAYMENTS</h1>
+<h3 class="sub-title">New payment</h3>
 
-<%= form_for @pay, url: {action: "create"}, html: {class: "form-inline"} do |form| %>
-	<h4>Date:</h4>
-<!-- 	<%= form.text_field :date, html: {class: "form-control"} %> -->
-	<%= form.date_select :date, start_year: 2017, use_short_month: true, prompt: ['Year', 'Month', 'Day'] %>
-	<h4>Amount:</h4>
-	<%= form.text_field :amount, html: {class: "form-control"} %>
-	<h4>Description:</h4>
-	<%= form.text_field :description, html: {class: "form-control"} %>
-	<h4>Tenant:</h4>
-	<%= form.select(:tenant_id, options_for_select([['apto 101', 1],['apto 102', 2],['apto 103', 3],['apto 104', 4],['apto 201', 5],['apto 202', 6],['apto 301', 7],['apto 302', 8],['apto 303', 9],['apto 304', 10],['apto 305', 11],['apto 401', 12],['apto 501', 13],['apto 502', 14],['apto 503', 15]]), prompt: true) %>
+	<div class="container justify-content-center mt-5">
+		<%= form_for @pay, url: {action: "create"}, html: {class: "form-group"} do |form| %>
 
-	<%= form.submit "Create" %>
-<% end %>
+
+				<div class="row justify-content-center align-items-center">	
+					<span class="col-1 text-right">Date:</span>
+					<%=form.text_field :date, class: "form-control col-2 text-center", type: "date", value: "2017-01-01" %>  		
+					<span class="col-1 text-right">Amount:</span>
+					<%= form.text_field :amount, class: "form-control col-2" %>
+				</div>
+				<div class="row justify-content-center align-items-center pt-3 pb-3">
+					<span class="col-2 text-right">Description:</span>
+					<%= form.text_field :description, class: "form-control col-4" %>
+				</div>
+				<div class="row justify-content-center align-items-center ">
+					<span class="col-1 text-right">Tenant:</span>
+					<%= form.select(:tenant_id, Tenant.all.collect {|p| [ "#{p.apartment.number} - #{p.name}", p.id ] }, { include_blank: "Please select" }, class: "form-control col-2")%>
+					<%= form.submit "Create", class: "btn btn-dark ml-3" %>
+				</div>
+			
+
+		<% end %>
+	</div>
 
  
 

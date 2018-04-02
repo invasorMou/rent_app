@@ -1,11 +1,11 @@
-<h1>Payments records</h1>
 
-<p style="display: inline-block;">Select a tenant</p>
-<%= select_tag "tenant", options_from_collection_for_select(Tenant.all, "id", "name"),options = {:prompt=> 'Tenants', :onchange => "test(this.options[this.selectedIndex].value);"}%>
+<h3 class="sub-title">Payments records</h3>
+<div class="tenant-selection form-inline justify-content-center">
+	<span class="col-2 align-items-center">Select a tenant:</span>
+	<%= select('tenant', :id, Tenant.all.collect {|p| [ "#{p.apartment.number} - #{p.name}", p.id ] }, { include_blank: "Please select" }, class: "form-control col-2.5 center", :onchange => "test(this.options[this.selectedIndex].value);")%>
+</div>
 
-<div class="result">
-	
 
+<div class="result" style="width: 60%;margin: 0px auto;">
 
-	
 </div>

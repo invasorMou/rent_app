@@ -12,28 +12,7 @@
   </head>
 
   <body>
-<!--     <div class="container" style="width: 100%;"> -->
-      <nav class="navbar navbar-expand-sm bg-info">
-        
-        <%= link_to octicon("home", :width => '30px'), '/', class: "nav-link  dark"%>
-
-        <ul class="navbar-nav mx-auto">        
-          <li class="nav-item">  
-            <%= link_to "Payments records", "/tenants/payments", class: "nav-link" %>
-          </li>
-          <li class="nav-item">  
-            <%= link_to "New payment", "/payments/new", class: "nav-link "%>
-          </li>
-          <li class="nav-item">  
-            <%= link_to "Cash flows", '/', class: "nav-link" %>
-          </li>
-          <li class="nav-item"> 
-            <%= link_to "Other reports", '/', class: "nav-link "%>
-          </li>
-        </ul>
-      </nav>
       <%= yield %>
-    <!-- </div>   -->
   </body>
 
 
