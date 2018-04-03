@@ -12,7 +12,7 @@
   </head>
 
   <body>
-<!--     <div class="container" style="width: 100%;"> -->
+
       <nav class="navbar navbar-expand-sm bg-info">
         
         <%= link_to octicon("home", :width => '30px'), '/', class: "nav-link  dark"%>
@@ -31,9 +31,19 @@
             <%= link_to "Other reports", '/', class: "nav-link "%>
           </li>
         </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <% if user_signed_in? %>
+            <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+          <% else %>
+            <li><%= link_to 'Sign up', new_user_registration_path, class: "nav-link"%></li>
+            <li><%= link_to 'Login', new_user_session_path, class: "nav-link"%></li>
+          <% end %>
+        </ul>
+
       </nav>
+    <% if notice %><div class="alert alert-info "><%= notice %> </div> <% end %>
+    <% if alert %><div class="alert alert-warning"><%= alert %> </div><% end %>
       <%= yield %>
-    <!-- </div>   -->
   </body>
 
 
