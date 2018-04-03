@@ -3,6 +3,7 @@ class PaymentsController < ApplicationController
 
 	def new
 		@pay = Payment.new
+		@only_admin = current_user.admin?
 	end
 	def create
 		Payment.create!(pay_params)

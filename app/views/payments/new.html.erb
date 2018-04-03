@@ -1,30 +1,33 @@
 <h3 class="sub-title">New payment</h3>
 
-	<div class="container justify-content-center mt-5">
-		<%= form_for @pay, url: {action: "create"}, html: {class: "form-group"} do |form| %>
+	<% if @only_admin %>
+		<div class="container justify-content-center mt-5">
+			<%= form_for @pay, url: {action: "create"}, html: {class: "form-group"} do |form| %>
 
 
-				<div class="row justify-content-center align-items-center">	
-					<span class="col-1 text-right">Date:</span>
-					<%=form.text_field :date, class: "form-control col-2 text-center", type: "date", value: "2017-01-01" %>  		
-					<span class="col-1 text-right">Amount:</span>
-					<%= form.text_field :amount, class: "form-control col-2" %>
-				</div>
-				<div class="row justify-content-center align-items-center pt-3 pb-3">
-					<span class="col-2 text-right">Description:</span>
-					<%= form.text_field :description, class: "form-control col-4" %>
-				</div>
-				<div class="row justify-content-center align-items-center ">
-					<span class="col-1 text-right">Tenant:</span>
-					<%= form.select(:tenant_id, Tenant.all.collect {|p| [ "#{p.apartment.number} - #{p.name}", p.id ] }, { include_blank: "Please select" }, class: "form-control col-2")%>
-					<%= form.submit "Create", class: "btn btn-dark ml-3" %>
-				</div>
-			
+					<div class="row justify-content-center align-items-center">	
+						<span class="col-1 text-right">Date:</span>
+						<%=form.text_field :date, class: "form-control col-2 text-center", type: "date", value: "2017-01-01" %>  		
+						<span class="col-1 text-right">Amount:</span>
+						<%= form.text_field :amount, class: "form-control col-2" %>
+					</div>
+					<div class="row justify-content-center align-items-center pt-3 pb-3">
+						<span class="col-2 text-right">Description:</span>
+						<%= form.text_field :description, class: "form-control col-4" %>
+					</div>
+					<div class="row justify-content-center align-items-center ">
+						<span class="col-1 text-right">Tenant:</span>
+						<%= form.select(:tenant_id, Tenant.all.collect {|p| [ "#{p.apartment.number} - #{p.name}", p.id ] }, { include_blank: "Please select" }, class: "form-control col-2")%>
+						<%= form.submit "Create", class: "btn btn-dark ml-3" %>
+					</div>
+				
 
-		<% end %>
-	</div>
-
- 
+			<% end %>
+		</div>
+	<% else %>
+		<h2 class="text-center" style="padding-top: 150px;">Only admins can create new payment!</h2>
+	<% end %>
+	 
 
 
 	
